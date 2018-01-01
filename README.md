@@ -14,7 +14,7 @@ output_file_1:
 
 output_file_2:
 -A file that reprents the linked list of chars from the input file
--This linked list must be enqueued such that the char with the highest frequency/priority appears first.
+-This linked list must be enqueued such that the char with the highest frequency/priority appears last.
 
 output_file_3:
 -This file will contain the binary stream for every char in the input file
