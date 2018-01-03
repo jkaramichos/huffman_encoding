@@ -21,8 +21,8 @@ void print_output_1(FILE* input_file, FILE* output_file_1, int* priority_of_char
 		priority_of_char[(int)c]++;
 	}
 
-	for(int i = 0; i < TOTAL_ASCII; i++){
-		fprintf(output_file_1, "%d\n", priority_of_char[i]);
+	for(int i = 0; i < TOTAL_ASCII; i++){ 
+		fprintf(output_file_1, "%d\n", priority_of_char[i]); //print frequency of each char to output_file_1
 	}
 }
 
@@ -30,7 +30,7 @@ void print_output_1(FILE* input_file, FILE* output_file_1, int* priority_of_char
 void print_output_2(FILE* output_file_2, Node* list){
 
 	for(Node* curr = list; curr != NULL; curr = curr -> next){
-		fprintf(output_file_2, "%c:%d->", *(const int*) curr -> ptr, curr -> priority);
+		fprintf(output_file_2, "%c:%d->", *(const int*) curr -> ptr, curr -> priority); //print linked list
 	}
 
    fprintf(output_file_2, "NULL\n");
@@ -123,12 +123,12 @@ void pq_enqueue(Node **pq, const void *new_object, int priority){
 	}
 
 	else{
-		enqueue_tree(pq, &new_node);
+		enqueue_tree(pq, &new_node); //enqueue_tree is essentially a helper function here.
 	}
 
 }
 
-Node* stack_pop(Node **stack){
+Node* stack_pop(Node **stack){ //remove first node from list
 
 	Node* temp = *stack;
 	Node* delete = *stack;
@@ -144,7 +144,7 @@ Node* stack_pop(Node **stack){
 	return delete;
 }
 
-void destroy_node(Node *root){ //this function will destroy the linked list of chars
+void destroy_node(Node *root){ //destroy the linked list
 
 	if(root == NULL){
 		return;
