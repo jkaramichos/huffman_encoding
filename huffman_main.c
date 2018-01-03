@@ -5,6 +5,7 @@
 
 int main(int argc, char* argv[]){
 
+	//error handling..program must receive 5 inputs including the program executable
 	if(argc != 5){
 		return EXIT_FAILURE;
 	}
@@ -16,7 +17,7 @@ int main(int argc, char* argv[]){
 	
 		const int TOTAL_ASCII = 256;
 
-		int priority_array[256]; 
+		int priority_array[256];
 
 		print_output_1(input_file, output_file_1, priority_array); //do everything required for output_file 1;
 		
@@ -47,13 +48,14 @@ int main(int argc, char* argv[]){
 
 			}
 			else{
-
+				
+				//pop two nodes from linked list then merge them together to create tree
 				left_node = stack_pop(&head);
 				right_node = stack_pop(&head);
 
 				tree = create_tree(&left_node, &right_node);
 				
-				enqueue_tree(&head, &tree);
+				enqueue_tree(&head, &tree); //enqueue tree node into list
 				
 			}
 
